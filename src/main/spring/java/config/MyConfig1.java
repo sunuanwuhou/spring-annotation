@@ -1,8 +1,10 @@
 package spring.java.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import spring.java.bean.Book;
+import spring.java.bean.BookNot;
 import spring.java.bean.Person;
 
 /**
@@ -12,7 +14,8 @@ import spring.java.bean.Person;
  * @date 2020/7/1 15:32
  */
 @Configuration
-@Conditional({MyCondition.class})
+// @Conditional({MyCondition.class})
+@Import({BookNot.class, Book.class,MyImportSelector.class})
 public class MyConfig1 {
 
     @Bean(name = "person")
