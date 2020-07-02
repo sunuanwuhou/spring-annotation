@@ -15,7 +15,6 @@ public class MainClass3 {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig3.class);
 
-        context.getBean("person");
         context.close();
     }
 }

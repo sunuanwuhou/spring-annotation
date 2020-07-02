@@ -2,7 +2,6 @@ package spring.java.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 import spring.java.bean.Person;
 
 /**
@@ -14,9 +13,9 @@ import spring.java.bean.Person;
 @Configuration
 public class MyConfig3 {
 
-    @Scope("singleton")
     @Bean(initMethod = "init",destroyMethod = "destory")
     public Person person() {
-        return new Person();
+        return new Person("1",1);
     }
+
 }

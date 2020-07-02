@@ -1,7 +1,9 @@
 package spring.java.bean;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -12,7 +14,7 @@ import javax.annotation.PreDestroy;
  * @description
  * @date 2020/7/1 10:20
  */
-public class Person implements InitializingBean, DisposableBean {
+public class Person implements InitializingBean, DisposableBean, BeanPostProcessor {
     @Override
     public void destroy() throws Exception {
         System.out.println("destroy--------------");
@@ -24,16 +26,7 @@ public class Person implements InitializingBean, DisposableBean {
     }
 
 
-    @PostConstruct
-    public void postConstruct(){
-        System.out.println("postConstruct--------------");
 
-    }
-
-    @PreDestroy
-    public void Predestory(){
-        System.out.println("Predestory--------------");
-    }
 
 
     String name;
@@ -80,4 +73,26 @@ public class Person implements InitializingBean, DisposableBean {
     }
 
 
+    @Override
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("postProcessBeforeInitialization2222222--------------");
+        return null;
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        System.out.println("postProcessAfterInitialization111111--------------");
+        return bean;
+    }
+
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("postConstruct--------------");
+
+    }
+
+    @PreDestroy
+    public void Predestory(){
+        System.out.println("Predestory--------------");
+    }
 }
