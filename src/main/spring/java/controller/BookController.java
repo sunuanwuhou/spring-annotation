@@ -1,6 +1,7 @@
 package spring.java.controller;
 
 import org.springframework.stereotype.Controller;
+import spring.java.serrvice.BookService;
 
 /**
  * @author qiumeng
@@ -11,4 +12,5 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class BookController {
 
+    private BookService bookService;
 }
