@@ -1,4 +1,4 @@
-package spring.java;
+package spring.java.mainClass;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import spring.java.config.MyConfig3;
@@ -14,6 +14,8 @@ public class MainClass3 {
     public static void main(String[] args) {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig3.class);
+
+        Object person = context.getBean("person");
 
         context.close();
     }

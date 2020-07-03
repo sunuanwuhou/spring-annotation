@@ -1,4 +1,4 @@
-package spring.java;
+package spring.java.mainClass;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import spring.java.config.MyConfig2;
