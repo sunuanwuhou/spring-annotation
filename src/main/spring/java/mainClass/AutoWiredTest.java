@@ -1,6 +1,8 @@
 package spring.java.mainClass;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import spring.java.bean.BookNot;
+import spring.java.bean.Boss;
 import spring.java.config.MyConfigAutowired;
 import spring.java.serrvice.BookService;
 
@@ -19,9 +21,20 @@ public class AutoWiredTest {
 
         BookService bean = context.getBean(BookService.class);
 
-        // String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        String[] beanDefinitionNames = context.getBeanDefinitionNames();
 
         System.out.println(bean);
+
+
+
+
+        Boss boss = context.getBean(Boss.class);
+
+        System.out.println(boss);
+
+        BookNot bookNot = context.getBean(BookNot.class);
+
+        System.out.println(bookNot);
 
         // BookRepositry bookRepositry = context.getBean(BookRepositry.class);
 

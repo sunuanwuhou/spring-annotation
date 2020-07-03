@@ -1,7 +1,11 @@
 package spring.java.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import spring.java.bean.BookNot;
+import spring.java.bean.Boss;
 
 /**
  * @author qiumeng
@@ -11,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan({"spring.java.repository","spring.java.serrvice","spring.java.controller"})
+@Import({BookNot.class})
 public class MyConfigAutowired {
 
 
@@ -25,4 +30,12 @@ public class MyConfigAutowired {
     //     bookRepositry.setLable("3");
     //     return bookRepositry;
     // }
+
+
+    @Bean
+    public Boss boss(BookNot bookNot){
+        Boss boss = new Boss();
+        boss.setBookNot(bookNot);
+        return boss;
+    }
 }
