@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import spring.java.bean.BookNot;
 import spring.java.bean.Boss;
+import spring.java.bean.MyApplicationContextAware;
 
 /**
  * @author qiumeng
@@ -15,7 +16,7 @@ import spring.java.bean.Boss;
  */
 @Configuration
 @ComponentScan({"spring.java.repository","spring.java.serrvice","spring.java.controller"})
-@Import({BookNot.class})
+@Import({BookNot.class, MyApplicationContextAware.class})
 public class MyConfigAutowired {
 
 
