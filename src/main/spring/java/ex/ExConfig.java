@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
  * @date 2020/7/6 16:42
  */
 @Configuration
-@Import({MyBeanDefinitionRegistryPostProcessor.class})
+@Import({MyApplicationListener.class})
 public class ExConfig {
 
 }
