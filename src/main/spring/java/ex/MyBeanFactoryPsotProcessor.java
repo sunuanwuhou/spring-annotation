@@ -6,8 +6,6 @@ import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 /**
- * @author qiumeng
- * @version 1.0
  * @description
  * @date 2020/7/6 17:01
  */
